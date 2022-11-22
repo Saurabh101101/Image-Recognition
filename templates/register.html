@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  @import url('https://fonts.google.com/css?family=Open+Sans:300,400,600,700&display=swap');
+  * {
+    margin: 0px auto;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .cont_principal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  /* Rectangle 3: */
+  background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+  }
+  
+  .cont_centrar {
+    position: absolute;
+    width: 320px;
+    left:50%;
+    top:50%;
+    margin-left: -160px;
+    margin-top: -160px;
+  }
+  
+  .cont_centrar {
+    position: relative;
+    width: 320px;
+    float: left;
+    background-image: linear-gradient(-226deg, #FFFFFF 8%, #EEF3F5 100%);
+  
+    border-radius: 8px;
+  transition: all 0.5s;
+  }
+  
+  .cent_active {
+      box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.21);
+  }
+  
+  
+  .cont_tabs_login {
+  position: relative;
+    float: left;
+    width: 100%;
+  }
+  
+  .ul_tabs > li { 
+  position: relative;
+    float: left;
+    width: 50%;
+    list-style: none;
+    text-align: center;
+  
+  }
+  
+  .ul_tabs > li > a  {  
+  text-decoration: none;
+  font-family: Helvetica;
+  font-size: 16px;
+      color: #999;
+  line-height: 14px;
+  padding: 20px ;
+  display: block;
+  transition: all 0.5s;
+  }
+  
+    .ul_tabs > .active > a  {  
+  color: #FF8383;
+  
+  }
+  
+  .linea_bajo_nom {
+    position: relative;
+    width: 100%;
+    float: left;
+    background-color: #999;
+    height: 2px;
+  }
+  
+  .active .linea_bajo_nom {
+    position: relative;
+    width: 100%;
+    float: left;
+  background-color: #FF8383;
+  height: 2px;
+  }
+  
+  .cont_text_inputs {
+  position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .input_form_sign {
+    position: relative;
+    float: left;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #B0BEC5 ;
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.5s;
+      height: 0px;
+      margin: 0px;
+      padding: 0px;  
+  opacity: 0;
+  display: none;
+  }
+  
+  .active_inp {
+    margin: 5% 5% ;  
+    padding: 10px 0px;
+    opacity: 1;
+  height: 5px;
+  }
+  
+  
+  
+  .input_form_sign:focus {
+    border-bottom: 1px solid #FF8383 ;}
+  
+  .link_forgot_pass {
+  position: relative;
+    margin-top: 0px;
+    margin-left: 30%;
+    text-decoration: none;
+    color: #999;
+    font-size: 13px;
+    display: none;
+    float: left;
+    transition: all 0.5s;
+  }
+  .cont_btn {
+    position: relative;
+    float: left;
+  }
+  
+  .btn_sign {
+    background: rgba(255,64,88,0.74);
+    box-shadow: 0px 2px 20px 2px rgba(255,114,132,0.50);
+    border-radius: 8px;
+    padding: 15px 30px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    position: relative;  
+    float: left;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .terms_and_cons {
+    width: 70%;  
+    color: #999;
+    font-size: 13px;
+    transition: all 0.5s;
+  }
+  
+  .d_none {
+    display: none;
+  }
+  
+  .d_block {
+    display: block;
+  }
+  
+  .cont_text_inputs > input:nth-child(1){
+    transition-delay: 0.2s;
+  }
+  
+  .cont_text_inputs > input:nth-child(2){
+    transition-delay: 0.4s;
+  }
+  .cont_text_inputs > input:nth-child(3){
+    transition-delay: 0.6s;
+  }
+  .cont_text_inputs > input:nth-child(4){
+    transition-delay: 0.8s;
+  }
+  html {
+    zoom:80%;
+  {% comment %} height:100%; {% endcomment %}
+}
+  * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+  body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#000033;
+  }
+
+  .container {
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    {% comment %} border-style: outset ; {% endcomment %}
+    border-top: 1px solid white;
+    {% comment %} border-left: 1px solid white;
+    border-right: 1px solid white; {% endcomment %}
+  }
+
+  .container .card {
+    position:relative;
+    width:320px;
+    padding:40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    {% comment %} border-style: inset; {% endcomment %}
+    border-top: 2px solid white;
+    
+
+  }
+
+  .container .card:before {
+    content: '';
+    position:absolute;
+    left:0;
+    bottom: calc(-100% + 4px);
+    width:100%;
+    height:100%;
+    background:#000;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .card:hover:before {
+    bottom: 0;
+  }
+
+  .container .card:nth-child(1):before {
+    background: #ff56ac;
+  }
+
+  .container .card:nth-child(2):before {
+    background: #1bcaff;
+  }
+
+  .container .card:nth-child(3):before {
+    background: #e33cff;
+  }
+  .container .card:nth-child(4):before {
+    background: #DE3163;
+  }
+  
+
+  .container .card div {
+    position:relative;
+    z-index:2;
+  }
+
+  .container .card div h2 {
+   margin-bottom:10px;
+    font-size:30px;
+    transition:0.5s;
+    color:white;
+  }
+
+  .container .card div p {
+     font-size:18px;
+     transition:0.5s;
+     color:white;
+   }
+
+   .container .card div a {
+    margin-top: 20px;
+    font-size:14px;
+    display: inline-block;
+    text-decoration: none;
+    transition:0.5s;
+    background: #fff;
+    color:#777;
+    padding: 6px 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 20px rgba(0,0,0,.05);
+  }
+
+  .container .card:hover div h2,
+  .container .card:hover div p
+   {
+  color: #fff;
+   }
+   header{
+     top: 0px;
+   width: 100%;
+   position:fixed;
+   background-color:#000033;
+   z-index: 15;
+   border-bottom: 2px solid white;
+ }
+
+ body header nav a{
+   color: /*#172c42*/white;
+   border-radius: 100px;
+   font-weight: bold;
+   overflow: hidden;
+   text-decoration: none;
+   transition: 0.8s;
+   margin: 0 5px;
+ }
+ body header nav a:hover{
+  
+   text-decoration: none;
+   color: white;
+ box-shadow: 0 0 10px orange,0 0 30px orange;
+ }
+
+
+
+ nav{
+   margin: 15px 15px 15px 0;
+   height: 35px;
+   float: right;
+   border-radius: 100px;
+   padding-top: 10px;
+ }
+  </style>
+  <title>CSS Basic Hover Card Effect</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="home" style="padding:10px;">Home</a>
+      <a href="about" style="padding:10px;">About Us</a>
+    </nav>
+    
+  </header>
+  <body>
+    <form action="home" method="post">{%csrf_token%}
+    <div class="cont_principal">
+
+      <div class="cont_centrar">
+      <div class="cont_login">
+        <form action="">
+        <div class="cont_tabs_login">
+          <ul class='ul_tabs'>
+            <li class="active"><a href="#" onclick="sign_in()">SIGN IN</a>
+            <span class="linea_bajo_nom"></span>
+            
+          </ul>
+          </div>
+      <div class="cont_text_inputs">
+          <input type="text" class="input_form_sign " placeholder="NAME" name="name_us" />
+        
+        <input type="text" class="input_form_sign d_block active_inp" placeholder="EMAIL" name="emauil_us" />
+    
+        <input type="password" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" />  
+       <input type="password" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
+        
+        <a href="#" class="link_forgot_pass d_block" >Forgot Password ?</a>    
+    <div class="terms_and_cons d_none">
+        <p><input type="checkbox" name="terms_and_cons" /> <label for="terms_and_cons">Accept  Terms and Conditions.</label></p>
+      
+        </div>
+          </div>
+    <div class="cont_btn">
+         <button class="btn_sign">SIGN IN</button>
+          
+          </div>
+          
+        </form>
+        </div>
+        
+      </div>
+      
+    
+    </div>
+   </form>
+</body>  
+</html>  

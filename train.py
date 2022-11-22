@@ -10,12 +10,14 @@ from torch.optim import Adam
 from torch.autograd import Variable
 import torchvision
 import pathlib
+
 # checking for device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 # Transforms
+
 transformer = transforms.Compose([
-    transforms.Resize((150, 150)),
+    transforms.Resize((250, 250)),
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),  # 0-255 to 0-1, numpy to tensors
     transforms.Normalize([0.5, 0.5, 0.5],  # 0-1 to [-1,1] , formula (x-mean)/std
@@ -24,60 +26,54 @@ transformer = transforms.Compose([
 # Dataloader
 
 # Path for training and testing directory
-train_path = 'D:/WORK/Project/dataset/trainingset'
-test_path = 'D:/WORK/Project/dataset/testset'
+train_path = 'D:/WORK/Project/Final/train'
+test_path = 'D:/WORK/Project/Final/test'
 
 train_loader = DataLoader(
     torchvision.datasets.ImageFolder(train_path, transform=transformer),
-    batch_size=4, shuffle=True
+    batch_size=6, shuffle=True
 )
 test_loader = DataLoader(
     torchvision.datasets.ImageFolder(test_path, transform=transformer),
-    batch_size=2, shuffle=True
+    batch_size=3, shuffle=True
 )
 # categories
 root = pathlib.Path(train_path)
 classes = sorted([j.name.split('/')[-1] for j in root.iterdir()])
 print(classes)
 # CNN Network
-
-
 class ConvNet(nn.Module):
-    def __init__(self, num_classes=7):
+    def __init__(self, num_classes=6):
         super(ConvNet, self).__init__()
 
         # Output size after convolution filter
         # ((w-f+2P)/s) +1
 
-        # Input shape= (10,3,150,150)
-
         self.conv1 = nn.Conv2d(
             in_channels=3, out_channels=12, kernel_size=3, stride=1, padding=1)
-        #Shape= (10,12,150,150)
+        
         self.bn1 = nn.BatchNorm2d(num_features=12)
-        #Shape= (10,12,150,150)
+        
         self.relu1 = nn.ReLU()
-        #Shape= (10,12,150,150)
+        
 
         self.pool = nn.MaxPool2d(kernel_size=2)
         # Reduce the image size be factor 2
-        #Shape= (10,12,75,75)
-
+#....................................................................................................
         self.conv2 = nn.Conv2d(
             in_channels=12, out_channels=20, kernel_size=3, stride=1, padding=1)
-        #Shape= (10,20,75,75)
+        
         self.relu2 = nn.ReLU()
-        #Shape= (10,20,75,75)
-
+#....................................................................................................
         self.conv3 = nn.Conv2d(
             in_channels=20, out_channels=32, kernel_size=3, stride=1, padding=1)
-        #Shape= (10,32,75,75)
+        
         self.bn3 = nn.BatchNorm2d(num_features=32)
-        #Shape= (10,32,75,75)
+       
         self.relu3 = nn.ReLU()
-        #Shape= (10,32,75,75)
+        
 
-        self.fc = nn.Linear(in_features=32*75*75, out_features=num_classes)
+        self.fc = nn.Linear(in_features=32*125*125, out_features=num_classes)
 
         # Feed forwad function
 
@@ -97,14 +93,14 @@ class ConvNet(nn.Module):
 
         # Above output will be in matrix form, with shape (10,32,75,75)
 
-        output = output.view(-1, 32*75*75)
+        output = output.view(-1, 32*125*125)
 
         output = self.fc(output)
 
         return output
 
 
-model = ConvNet(num_classes=7).to(device)
+model = ConvNet(num_classes=6).to(device)
 # Optmizer and loss function
 optimizer = Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
 loss_function = nn.CrossEntropyLoss()
@@ -162,7 +158,6 @@ for epoch in range(num_epochs):
     print('Epoch: '+str(epoch)+' Train Loss: '+str(train_loss) +
           ' Train Accuracy: '+str(train_accuracy)+' Test Accuracy: '+str(test_accuracy))
 
-    # Save the best model
     if test_accuracy > best_accuracy:
         torch.save(model.state_dict(), 'best_checkpoint.model')
         best_accuracy = test_accuracy

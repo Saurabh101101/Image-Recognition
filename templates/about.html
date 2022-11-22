@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  @import url('https://fonts.google.com/css?family=Open+Sans:300,400,600,700&display=swap');
+  html {
+    zoom:80%;
+  {% comment %} height:100%; {% endcomment %}
+}
+  * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+  body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#000033;
+  }
+
+  .container {
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    {% comment %} border-style: outset ; {% endcomment %}
+    border-top: 1px solid white;
+    {% comment %} border-left: 1px solid white;
+    border-right: 1px solid white; {% endcomment %}
+  }
+
+  .container .card {
+    position:relative;
+    width:320px;
+    padding:40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    {% comment %} border-style: inset; {% endcomment %}
+    border-top: 2px solid white;
+    
+
+  }
+
+  .container .card:before {
+    content: '';
+    position:absolute;
+    left:0;
+    bottom: calc(-100% + 4px);
+    width:100%;
+    height:100%;
+    background:#000;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+  }
+
+  .container .card:hover:before {
+    bottom: 0;
+  }
+
+  .container .card:nth-child(1):before {
+    background: #ff56ac;
+  }
+
+  .container .card:nth-child(2):before {
+    background: #1bcaff;
+  }
+
+  .container .card:nth-child(3):before {
+    background: #e33cff;
+  }
+  .container .card:nth-child(4):before {
+    background: #DE3163;
+  }
+  
+
+  .container .card div {
+    position:relative;
+    z-index:2;
+  }
+
+  .container .card div h2 {
+   margin-bottom:10px;
+    font-size:30px;
+    transition:0.5s;
+    color:white;
+  }
+
+  .container .card div p {
+     font-size:18px;
+     transition:0.5s;
+     color:white;
+   }
+
+   .container .card div a {
+    margin-top: 20px;
+    font-size:14px;
+    display: inline-block;
+    text-decoration: none;
+    transition:0.5s;
+    background: #fff;
+    color:#777;
+    padding: 6px 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 20px rgba(0,0,0,.05);
+  }
+
+  .container .card:hover div h2,
+  .container .card:hover div p
+   {
+  color: #fff;
+   }
+   header{
+     top: 0px;
+   width: 100%;
+   position:fixed;
+   background-color:#000033;
+   z-index: 15;
+   border-bottom: 2px solid white;
+ }
+
+ body header nav a{
+   color: /*#172c42*/white;
+   border-radius: 100px;
+   font-weight: bold;
+   overflow: hidden;
+   text-decoration: none;
+   transition: 0.8s;
+   margin: 0 5px;
+ }
+ body header nav a:hover{
+  
+   text-decoration: none;
+   color: white;
+ box-shadow: 0 0 10px orange,0 0 30px orange;
+ }
+
+
+
+ nav{
+   margin: 15px 15px 15px 0;
+   height: 35px;
+   float: right;
+   border-radius: 100px;
+   padding-top: 10px;
+ }
+  </style>
+  <title>CSS Basic Hover Card Effect</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="home" style="padding:10px;">Home</a>
+      <a href="about" style="padding:10px;">About Us</a>
+    </nav>
+    
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div>
+        <h2><center>Aakif Khan</center></h2><br>
+        <p>The Quality tester, Research Scientist and College Representative</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <h2><center>Suyog Magar</center></h2><br>
+        <p>Frontend Developer, Requirement Analyst and UX Designer</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <h2><center>Suraj Katariya</center></h2><br>
+        <p>Backend Developer, Data Analyst and Project Manager / Team Leader</p>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <h2><center>Saurabh Madake</center></h2><br>
+        <p>AI / ML Engineer, Software Developer and Process Consultant</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

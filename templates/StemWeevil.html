@@ -1,0 +1,285 @@
+<html>
+<head>
+  <title> Detail's page </title>
+  <style>
+  img {
+      border: 3px solid #555;
+    }
+  body{
+    font-family: 'Montserrat', sans-serif;}/*
+    color: #92a8d1;
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+  }*/
+  html {
+    zoom:90%;
+  {% comment %} height:100%; {% endcomment %}
+}
+
+body {
+  margin:0;
+  background-color:#B9F0FF;
+  
+}
+
+{% comment %} .bg {
+   animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, /*#40cc33*/#40cc33 50%, #40cc33 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.10;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+} {% endcomment %}
+
+{% comment %} .bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+} {% endcomment %}
+
+{% comment %} .bg3 {
+  animation-duration:5s;
+} {% endcomment %}
+
+{% comment %} @keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+} {% endcomment %}
+  /*header*/
+  header{
+  width: 100%;
+  position:fixed;
+  background-color:#000033;
+  z-index: 15;
+}
+
+body header nav a{
+  color: /*#172c42*/white;
+  border-radius: 100px;
+  font-weight: bold;
+  overflow: hidden;
+  text-decoration: none;
+  transition: 0.8s;
+  margin: 0 5px;
+}
+body header nav a:hover{
+  text-decoration: none;
+  color: white;
+box-shadow: 0 0 10px orange,0 0 30px orange;
+}
+
+nav{
+  margin: 15px 15px 15px 0;
+  height: 35px;
+  float: right;
+  border-radius: 100px;
+  padding-top: 10px;
+}
+  section{
+    padding: 20px;
+  }
+  h2{
+    font-size: 23px;
+    font-color: #6F116F;
+    background-color: #6F116F;
+  }
+  h3{
+    font-size: 25px;
+  }
+  .column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+  
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-10 {
+  background: rgb(22,9,240);
+background: linear-gradient(0deg, rgba(22,9,240,1) 0%, rgba(49,110,244,1) 100%);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.btn-10:after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(.1);
+  transform: scale(.1);
+}
+.btn-10:hover {
+  color: #fff;
+  border: none;
+  background: transparent;
+}
+.btn-10:hover:after {
+  background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(2,126,251,1) 0%,  rgba(0,3,255,1)100%);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.button {
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background:#000033;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #A72121;
+}
+
+.button:active {
+  background: #A72121;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+}
+
+.button__icon:hover {
+  background: #A72121;
+}
+.button__icon {
+  font-size: 1.5em;
+  background: #000033;
+}
+
+ </style>
+</head>
+<body>
+  <header>
+    
+    <nav>
+
+      <a href="home" style="padding:10px;">Home</a>
+      <a href="about" style="padding:10px;">About Us</a>
+    </nav>
+  </header>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <section style="padding:8px; border: 0px">
+  <div>
+    <h2 style="padding-top: 50px;">  <div class="column" style="margin: 8px;padding-top: 20px; align-items: center; height: 40px; width:96.5%; box-shadow: 0 6px 10px 0 rgba(0,0,0,0.4); border-radius:20px; align:center;   background-color:rgba(255,255,255,0.3);
+    backdrop-filter:blur(12px);"><font color="#000080">The Input Image is classified under the category of :</font> <font color="Blood Red"> Stem Weevil ( Scientic Name - Pempheres Affinis )</font></h2>
+  </div>
+  <div class="row" style="padding:0px; border:0px;">
+    <div class="column" style="margin: 8px; align-items: center; height: 480px; width:25%;  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.4);
+  transition: 0.3s; border-radius:20px; it;   background-color:rgba(255,255,255,0.3);
+    backdrop-filter:blur(12px);">
+    <div>
+      <h3><font color="Blood Red"> Related Images:</font></h3>
+      <center> <img src="http://agritech.tnau.ac.in/crop_protection/crop_prot_crop_insectpest%20_cotton_clip_image006_0002.jpg" width="250" height="175"></center>
+        <br>
+        <center><img src="http://agritech.tnau.ac.in/crop_protection/crop_prot_crop_insectpest%20_cotton_clip_image004_0002.jpg"" width="250" height="175"></center>
+        </div>
+
+    </div>
+    <div class="column" style="margin: 8px; align-items: center; height: 480px; box-shadow: 0 6px 10px 0 rgba(0,0,0,0.4);
+  transition: 0.3s; border-radius:20px; align:center;   background-color:rgba(255,255,255,0.3);
+    backdrop-filter:blur(12px);">
+      <h3 style="text-align: center;"><font color="Blood Red">Symptom of damage</font></h3>
+      <ul>
+        <li>Swellings on the stem just above the ground level</li>
+       <li>Young plants are invariably killed</li>
+       <li> Older plants that survive lack vigor and strength, breaks at the nodes due to strong wind </li>
+    </ul>
+      <h3 style="text-align: center;"><font color="Blood Red">Identification of the pest</font></h3>
+      <p>Larva - Grub, white in colour without leg (apodous)</p>
+      <p>Adult - Very small weevil, dark in colour with two small white patches on the elytra</p>
+    </div>
+    <div class="column" style="margin: 8px; align-items: center; height: 480px; box-shadow: 0 6px 10px 0 rgba(0,0,0,0.4);
+  transition: 0.3s; border-radius:20px; align:center;   background-color:rgba(255,255,255,0.3);
+    backdrop-filter:blur(12px);">
+      <h3 style="text-align: center;"><font color="Blood Red">Management</font></h3>
+      <ul>
+        <li>ETL: 10% infestation  </li>
+        <li>Basal application of FYM 25 t/ha and 250 kg/ha of neem cake</li>
+        <li>Seed treatment with chlorpyriphos 20 EC @ 10ml/kg of seed+ Drenching collar region with chlorpyriphos 20 EC @ 2.5ml/ l on 15 and 30 DAS+ earthing up</li>
+       <br> <li><b>Spray any one of the following insecticides</b></li><br>
+
+        <li>Carbaryl50 WP 2.5 kg/ha</li>
+        <li>Carbofuran 3G 33.3 kg/ha </li>
+      </ul>
+        <section>
+        </section>
+      </div>
+    </div>
+  </section>
+    <div class="container">
+  
+      <form action="home" method="post">{%csrf_token%}<center><button class="button" type="submit"><span class="button__text"><b>Click Here to Identify Pest Again !</b></span>
+<span class="button__icon">
+  <ion-icon name="refresh-outline"></ion-icon>
+      </span></button></center></form>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<bodY>
+</html>
